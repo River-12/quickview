@@ -1,0 +1,16 @@
+<?php
+/**
+ * @var \Riverstone\Quickview\Block\Product\Social $block
+ */
+?>
+<?php $_product = $block->getProduct() ?>
+<?php if ($block->getConfigShowEmail()): ?>
+    <a href="<?= $escaper->escapeUrl($block->helper(Magento\Catalog\Helper\Product::class)
+        ->getEmailToFriendUrl($_product)) ?>"
+       class="action mailto friend"><span><?= $escaper->escapeHtml(__('Email')) ?></span></a>
+<?php endif; ?>
+<script type="text/x-magento-init">
+    {
+        "*": {"Riverstone_Quickview/js/wishlist":{}}
+    }
+</script>

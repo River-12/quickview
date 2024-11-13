@@ -1,0 +1,22 @@
+<?php
+/**
+ * @var \Riverstone\Quickview\Block\Initialize $block
+ */
+?>
+<?php $product = $block->getProduct(); ?>
+<?php
+$helper = $block->getHelper();
+$removeReview = $helper->getRemoveReview();
+$removeMoreInfo = $helper->getRemoveMoreInfo();
+?>
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Riverstone_Quickview/js/riverstone_beforebodyend": {
+                "removeReview": "<?=  /* @noEscape */ $removeReview; ?>",
+                "removeMoreInfo": "<?=  /* @noEscape */ $removeMoreInfo; ?>"
+            }
+        }
+    }
+</script>
